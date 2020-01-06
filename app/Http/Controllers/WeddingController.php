@@ -46,9 +46,7 @@ class WeddingController extends Controller
      */
     public function show(Wedding $wedding)
     {
-        //$guests = Guest::all();
-        return view('guestList');
-        //return view('guestList', ['guestList' => $guests]);
+        //
     }
 
     /**

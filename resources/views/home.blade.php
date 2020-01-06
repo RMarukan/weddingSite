@@ -1,23 +1,46 @@
-@extends('layouts.app')
+@extends('layout')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+    <h1>Guest List</h1>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+    <!-- Guest List -->
+    <table class="table table-striped task-table">
+        <thead>
+        <th>Id</th>
+        <th>名前</th>
+        <th>属性</th>
+        <th>１次会出欠</th>
+        <th>２次会出欠</th>
+        <th>料理の要望</th>
+        <th>その他要望</th>
+        </thead>
 
-                    You are logged in!
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+        <tbody>
+        @foreach ($home as $guest)
+            <tr>
+                <td>
+                    <div>{{ $guest->guestId }}</div>
+                </td>
+                <td>
+                    <div>{{ $guest->name }}</div>
+                </td>
+                <td>
+                    <div>{{ $guest->attributeId }}</div>
+                </td>
+                <td>
+                    <div>{{ $guest->{'1stAttendFlg'} }}</div>
+                </td>
+                <td>
+                    <div>{{ $guest->{'2ndAttendFlg'} }}</div>
+                </td>
+                <td>
+                    <div>{{ $guest->dinnerComment }}</div>
+                </td>
+                <td>
+                    <div>{{ $guest->anotherComment }}</div>
+                </td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
 @endsection

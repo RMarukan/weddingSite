@@ -19,4 +19,3 @@ Route::delete('/tasks/{id}', 'TaskController@destroy');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/guests', 'WeddingController@show');
