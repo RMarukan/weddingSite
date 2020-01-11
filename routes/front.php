@@ -12,8 +12,11 @@
 */
 
 Route::get('/', function(){return view('welcome');});
-Route::get('/welcomeForm/{attributeId}', 'WelcomeFormController@index');
-Route::post('/welcomeForm/{attributeId}', 'WelcomeFormController@store');
+
+
+Route::get('/welcomeFrom/{attributeId}', 'WelcomeFormController@show');
+Route::get('/inputForm', 'InputFormController@index');
+Route::post('/inputForm', 'InputFormController@store');
 
 
 

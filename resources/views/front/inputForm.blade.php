@@ -8,7 +8,7 @@
     <div>Attribute Message</div>
 
     <!-- Input From -->
-    <form  action="{{ route('welcomeForm.store')}}" method="post">
+    <form  action="{{ url('/inputForm')}}" method="post">
         {{ csrf_field() }}
         <table class="table table-striped task-table">
             <tbody>

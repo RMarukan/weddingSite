@@ -13,17 +13,16 @@ class WelcomeFormController extends Controller
      */
     public function index()
     {
-        return view('front.welcomeForm');
+        //
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Display the specified resource.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function show()
     {
-        return view('front.confirmForm');
+        //
     }
 }
