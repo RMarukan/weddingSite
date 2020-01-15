@@ -15,12 +15,26 @@
                 <tr>
                     <td>
                         <div class="form-group">
-                            <label for="guest-name" class="col-sm-3 control-label">お名前</label>
+                            <label class="col-sm-3 control-label">お名前（漢字）</label>
                         </div>
                     </td>
                     <td>
                         <div class="col-sm-6">
-                            <input type="text" name="guestName" id="guest-name" class="form-control" maxlength=20>
+                            姓：<input type="text" name="lstNameK" id="lstNameK"  maxlength=10>　
+                            名：<input type="text" name="fstNameK" id="fstNameK"  maxlength=10>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">お名前（かな）</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-sm-6">
+                            せい：<input type="text" name="lstNameF" id="lstNameF" maxlength=15>　
+                            めい：<input type="text" name="fstNameF" id="fstNameF" maxlength=15>
                         </div>
                     </td>
                 </tr>

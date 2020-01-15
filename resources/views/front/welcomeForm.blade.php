@@ -1,88 +1,14 @@
 @extends('front.layouts.app')
 
 @section('content')
-    <h1>Welcome To Our Wedding Party</h1>
+    <title>Welcome To Our Wedding Party</title>
     <!-- Massage Area -->
     <h1>Message Area</h1>
     <div>Common Message</div>
     <div>Attribute Message</div>
 
     <!-- Input From -->
-    <form  action="{{ route('welcomeForm.store')}}" method="post">
-        {{ csrf_field() }}
-        <table class="table table-striped task-table">
-            <tbody>
-                <tr>
-                    <td>
-                        <div class="form-group">
-                            <label for="guest-name" class="col-sm-3 control-label">お名前</label>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="col-sm-6">
-                            <input type="text" name="guestName" id="guest-name" class="form-control" maxlength=20>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="form-group">
-                            <label for="attend1" class="col-sm-3 control-label">挙式・披露宴へのご参加</label>
-                        </div>
-                    </td>
-                    <td>
-                        <div>
-                            <input type="radio" name="attend1" id="r1" value="yes" checked>
-                            <lavel accesskey="Y" for="r1">ご出席</lavel>
-                            <input type="radio" name="attend1" id="r2" value="no">
-                            <lavel accesskey="Y" for="r2">ご欠席</lavel>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="form-group">
-                            <label for="attend2" class="col-sm-3 control-label">二次会へのご参加</label>
-                        </div>
-                    </td>
-                    <td>
-                        <div>
-                            <input type="radio" name="attend2" id="r3" value="yes" checked>
-                            <lavel accesskey="Y" for="r3">ご出席</lavel>
-                            <input type="radio" name="attend2" id="r4" value="no">
-                            <lavel accesskey="Y" for="r4">ご欠席</lavel>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="form-group">
-                            <label for="dComment" class="col-sm-3 control-label">お料理に対するご要望等</label>
-                        </div>
-                    </td>
-                    <td>
-                        <div>
-                            <textarea name="dComment" cols=60 rows=8>アレルギー等料理へのご要望がありましたら入力をお願いいたします。</textarea>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="form-group">
-                            <label for="dComment" class="col-sm-3 control-label">その他ご要望等</label>
-                        </div>
-                    </td>
-                    <td>
-                        <div>
-                            <textarea name="dComment" cols=60 rows=8>車椅子のご利用等要望がございましたらご入力をお願いいたします。</textarea>
-                        </div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <div>
-            <button type="submit">入力内容を確認する</button>
-        </div>
-    </form>
+    <div>
+        <a href="inputForm.blade.php">回答を入力する</a>
+    </div>
 @endsection

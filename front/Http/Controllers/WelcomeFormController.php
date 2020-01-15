@@ -3,6 +3,7 @@
 namespace Front\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Attribute;
 
 class WelcomeFormController extends Controller
 {

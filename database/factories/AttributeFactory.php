@@ -16,21 +16,11 @@ use Illuminate\Support\Str;
 |
 */
 
-$factory->define(App\Models\Guest::class, function (Faker $faker) {
+$factory->define(App\Models\Attribute::class, function (Faker $faker) {
 
     $date = $faker->dateTimeThisYear();
 
     return [
-        'lstNameK' => $faker->lastName,
-        'fstNameK' => $faker->firstName,
-        'lstNameF' => $faker->lastKanaName,
-        'fstNameF' => $faker->firstKanaName,
-        'attributeId' => $faker->numberBetween(1,3),
-        '1stAttendFlg' => $faker->boolean,
-        '2ndAttendFlg' => $faker->boolean,
-        'dinnerComment' => $faker->sentence,
-        'anotherComment' => $faker->sentence,
-        'created_at' => $date,
-        'updated_at' => $date,
+        //
     ];
 });
