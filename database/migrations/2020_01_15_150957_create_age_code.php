@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Fresh extends Migration
+class CreateAgeCode extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,11 @@ class Fresh extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('age_code', function (Blueprint $table) {
+            $table->integer('ageId')->primary();
+            $table->string('type',30);
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +27,6 @@ class Fresh extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('age_code');
     }
 }

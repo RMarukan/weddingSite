@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Attribute extends Model
+class Age_Code extends Model
 {
-    protected $table = 'attribute';
+    protected $table = 'age_code';
 }

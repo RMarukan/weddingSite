@@ -12,9 +12,9 @@ class WelcomeFormController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        //
+        return view('front.welcomeForm', ['attribute' => Attribute::where('attributeId',$id)->first()]);
     }
 
     /**

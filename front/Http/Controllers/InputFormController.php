@@ -3,6 +3,8 @@
 namespace Front\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Attribute;
+use App\Models\Age_Code;
 
 class InputFormController extends Controller
 {
@@ -11,9 +13,11 @@ class InputFormController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        return view('front.inputForm');
+        $attendType = Attribute::where('attributeId',$id)->first();
+        $ageCode = Age_Code::all();
+        return view('front.inputForm', ['ageCode' => $ageCode]) -> with('type',$attendType);
     }
 
     /**

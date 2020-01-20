@@ -41,7 +41,23 @@
                 <tr>
                     <td>
                         <div class="form-group">
-                            <label for="attend1" class="col-sm-3 control-label">挙式・披露宴へのご参加</label>
+                            <label class="col-sm-3 control-label">年代</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="col-sm-6">
+                            <select name="Age">
+                                @foreach($ageCode as $code)
+                                    <option value={{$code->id}}>{{$code->type}} </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="attend1" class="col-sm-3 control-label">{{$type->attendType}}へのご参加</label>
                         </div>
                     </td>
                     <td>
@@ -49,22 +65,7 @@
                             <input type="radio" name="attend1" id="r1" value="yes" checked>
                             <lavel accesskey="Y" for="r1">ご出席</lavel>
                             <input type="radio" name="attend1" id="r2" value="no">
-                            <lavel accesskey="Y" for="r2">ご欠席</lavel>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="form-group">
-                            <label for="attend2" class="col-sm-3 control-label">二次会へのご参加</label>
-                        </div>
-                    </td>
-                    <td>
-                        <div>
-                            <input type="radio" name="attend2" id="r3" value="yes" checked>
-                            <lavel accesskey="Y" for="r3">ご出席</lavel>
-                            <input type="radio" name="attend2" id="r4" value="no">
-                            <lavel accesskey="Y" for="r4">ご欠席</lavel>
+                            <lavel accesskey="N" for="r2">ご欠席</lavel>
                         </div>
                     </td>
                 </tr>
