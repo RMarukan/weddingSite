@@ -16,7 +16,7 @@ Route::get('/', function(){return view('welcome');});
 
 Route::get('/welcomeForm/{attributeId}', 'WelcomeFormController@index');
 Route::get('/inputForm/{attributeId}', 'InputFormController@index');
-Route::post('/inputForm', 'InputFormController@store');
+Route::post('/inputForm/{attributeId}', 'InputFormController@store', function(Request $request){});
 
 
 

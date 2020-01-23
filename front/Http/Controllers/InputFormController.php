@@ -28,7 +28,7 @@ class InputFormController extends Controller
      */
     public function store(Request $request)
     {
+        dd($name = $request->input('lstNameK'));
         return view('front.inputForm');
-        //return view('front.confirmForm');
     }
 }

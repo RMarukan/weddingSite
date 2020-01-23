@@ -1,12 +1,12 @@
 @extends('front.layouts.app')
 
 @section('content')
-    <title>入力フォーム</title>
+    <title>入力内容確認</title>
     <!-- Massage Area -->
-    <h1>ご出欠をご記入ください</h1>
+    <h1>ご入力内容をご確認ください</h1>
 
     <!-- Input From -->
-    <form  action="{{ url('inputForm') . "/" . $type->attributeId}}" method="post">
+    <form  action="{{ url('/inputForm')}}" method="post">
         {{ csrf_field() }}
         <table class="table table-striped task-table">
             <tbody>
