@@ -2,12 +2,14 @@
 
 namespace Front\Http\Controllers;
 
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
 use App\Models\Attribute;
 use App\Models\Age_Code;
+use Request;
 
 class InputFormController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -15,9 +17,9 @@ class InputFormController extends Controller
      */
     public function index($id)
     {
-        $attendType = Attribute::where('attributeId',$id)->first();
+        $type = Attribute::where('attributeId',$id)->first();
         $ageCode = Age_Code::all();
-        return view('front.inputForm', ['ageCode' => $ageCode]) -> with('type',$attendType);
+        return view('front.inputForm', ['ageCode' => $ageCode],compact('type'));
     }
 
     /**
@@ -26,9 +28,13 @@ class InputFormController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,$id)
     {
-        dd($name = $request->input('lstNameK'));
-        return view('front.inputForm');
+        $all = Request::all();
+
+        $type = Attribute::where('attributeId',$id)->first();
+        $ageName = Age_Code::where('ageId',$all['age'])->first();
+
+        return view('front.confirmForm',['all' => $all],compact('type','ageName'));
     }
 }

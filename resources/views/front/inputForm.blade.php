@@ -6,7 +6,7 @@
     <h1>ご出欠をご記入ください</h1>
 
     <!-- Input From -->
-    <form  action="{{ url('inputForm') . "/" . $type->attributeId}}" method="post">
+    <form  action="{{ url('confirmForm') . "/" . $type->attributeId}}" method="post">
         {{ csrf_field() }}
         <table class="table table-striped task-table">
             <tbody>
@@ -18,8 +18,8 @@
                     </td>
                     <td>
                         <div class="col-sm-6">
-                            姓：<input type="text" name="lstNameK" id="lstNameK"  maxlength=10>　
-                            名：<input type="text" name="fstNameK" id="fstNameK"  maxlength=10>
+                            姓：<input type="text" name="lstNameK" id="lstNameK"  maxlength=10 placeholder="姓">　
+                            名：<input type="text" name="fstNameK" id="fstNameK"  maxlength=10 placeholder="名">
                         </div>
                     </td>
                 </tr>
@@ -31,8 +31,8 @@
                     </td>
                     <td>
                         <div class="col-sm-6">
-                            せい：<input type="text" name="lstNameF" id="lstNameF" maxlength=15>　
-                            めい：<input type="text" name="fstNameF" id="fstNameF" maxlength=15>
+                            せい：<input type="text" name="lstNameF" id="lstNameF" maxlength=15 placeholder="せい">　
+                            めい：<input type="text" name="fstNameF" id="fstNameF" maxlength=15 placeholder="めい">
                         </div>
                     </td>
                 </tr>
@@ -44,9 +44,10 @@
                     </td>
                     <td>
                         <div class="col-sm-6">
-                            <select name="Age">
+                            <select name="age">
+                                <option>選択してください</option>
                                 @foreach($ageCode as $code)
-                                    <option value={{$code->id}}>{{$code->type}} </option>
+                                    <option value={{$code->ageId}}>{{$code->type}} </option>
                                 @endforeach
                             </select>
                         </div>
@@ -75,7 +76,7 @@
                     </td>
                     <td>
                         <div>
-                            <textarea name="dComment" cols=60 rows=8>アレルギー等料理へのご要望がありましたら入力をお願いいたします。</textarea>
+                            <textarea name="dComment" cols=60 rows=8 placeholder="アレルギー等料理へのご要望がありましたら入力をお願いいたします。"></textarea>
                         </div>
                     </td>
                 </tr>
@@ -87,7 +88,7 @@
                     </td>
                     <td>
                         <div>
-                            <textarea name="dComment" cols=60 rows=8>車椅子のご利用等要望がございましたらご入力をお願いいたします。</textarea>
+                            <textarea name="aComment" cols=60 rows=8 placeholder="車椅子のご利用等要望がございましたらご入力をお願いいたします。"></textarea>
                         </div>
                     </td>
                 </tr>

@@ -6,8 +6,6 @@
     <h1>ご入力内容をご確認ください</h1>
 
     <!-- Input From -->
-    <form  action="{{ url('/inputForm')}}" method="post">
-        {{ csrf_field() }}
         <table class="table table-striped task-table">
             <tbody>
                 <tr>
@@ -18,8 +16,8 @@
                     </td>
                     <td>
                         <div class="col-sm-6">
-                            姓：<input type="text" name="lstNameK" id="lstNameK"  maxlength=10>　
-                            名：<input type="text" name="fstNameK" id="fstNameK"  maxlength=10>
+                            姓：{{ $all['lstNameK'] }}　
+                            名：{{ $all['fstNameK'] }}
                         </div>
                     </td>
                 </tr>
@@ -31,8 +29,8 @@
                     </td>
                     <td>
                         <div class="col-sm-6">
-                            せい：<input type="text" name="lstNameF" id="lstNameF" maxlength=15>　
-                            めい：<input type="text" name="fstNameF" id="fstNameF" maxlength=15>
+                            せい：{{ $all['lstNameF']  }}　
+                            めい：{{ $all['fstNameF']  }}
                         </div>
                     </td>
                 </tr>
@@ -44,11 +42,7 @@
                     </td>
                     <td>
                         <div class="col-sm-6">
-                            <select name="Age">
-                                @foreach($ageCode as $code)
-                                    <option value={{$code->id}}>{{$code->type}} </option>
-                                @endforeach
-                            </select>
+                            {{ $ageName->type }}
                         </div>
                     </td>
                 </tr>
@@ -60,10 +54,7 @@
                     </td>
                     <td>
                         <div>
-                            <input type="radio" name="attend1" id="r1" value="yes" checked>
-                            <lavel accesskey="Y" for="r1">ご出席</lavel>
-                            <input type="radio" name="attend1" id="r2" value="no">
-                            <lavel accesskey="N" for="r2">ご欠席</lavel>
+                            {{ $all['attend1']  }}
                         </div>
                     </td>
                 </tr>
@@ -75,7 +66,7 @@
                     </td>
                     <td>
                         <div>
-                            <textarea name="dComment" cols=60 rows=8>アレルギー等料理へのご要望がありましたら入力をお願いいたします。</textarea>
+                            {{ $all['dComment']  }}
                         </div>
                     </td>
                 </tr>
@@ -87,7 +78,7 @@
                     </td>
                     <td>
                         <div>
-                            <textarea name="dComment" cols=60 rows=8>車椅子のご利用等要望がございましたらご入力をお願いいたします。</textarea>
+                            {{ $all['aComment']  }}
                         </div>
                     </td>
                 </tr>
@@ -95,7 +86,13 @@
             </tbody>
         </table>
         <div>
-            <button type="submit">入力内容を確認する</button>
+            <form  action="{{ url('/inputForm')}}" method="post">
+                {{ csrf_field() }}
+                 <button type="submit">修正する</button>
+            </form>
+            <form  action="{{ url('/inputForm')}}" method="post">
+                {{ csrf_field() }}
+                <button type="submit">登録する</button>
+            </form>
         </div>
-    </form>
 @endsection
