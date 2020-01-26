@@ -30,6 +30,7 @@ class InputFormController extends Controller
      */
     public function store(Request $request,$id)
     {
+        Request::flash();
         $all = Request::all();
 
         $type = Attribute::where('attributeId',$id)->first();

@@ -54,6 +54,8 @@
                     </td>
                     <td>
                         <div>
+                            @switch($all['attend1'])
+                            @case()
                             {{ $all['attend1']  }}
                         </div>
                     </td>
@@ -86,12 +88,28 @@
             </tbody>
         </table>
         <div>
-            <form  action="{{ url('/inputForm')}}" method="post">
+            <form  action="{{ url('/inputForm'). "/" . $type->attributeId}}" method="post">
                 {{ csrf_field() }}
-                 <button type="submit">修正する</button>
+                <input type="hidden" name="lstNameK" value={{$all['lstNameK']}}>
+                <input type="hidden" name="fstNameK" value={{$all['fstNameK']}}>
+                <input type="hidden" name="lstNameF" value={{$all['lstNameF']}}>
+                <input type="hidden" name="fstNameF" value={{$all['fstNameF']}}>
+                <input type="hidden" name="age" value={{$all['age']}}>
+                <input type="hidden" name="attend1" value={{$all['attend1']}}>
+                <input type="hidden" name="dComment" value={{$all['dComment']}}>
+                <input type="hidden" name="aComment" value={{$all['aComment']}}>
+                <button type="submit">修正する</button>
             </form>
             <form  action="{{ url('/inputForm')}}" method="post">
                 {{ csrf_field() }}
+                <input type="hidden" name="lstNameK" value={{$all['lstNameK']}}>
+                <input type="hidden" name="fstNameK" value={{$all['fstNameK']}}>
+                <input type="hidden" name="lstNameF" value={{$all['lstNameF']}}>
+                <input type="hidden" name="fstNameF" value={{$all['fstNameF']}}>
+                <input type="hidden" name="age" value={{$all['age']}}>
+                <input type="hidden" name="attend1" value={{$all['attend1']}}>
+                <input type="hidden" name="dComment" value={{$all['dComment']}}>
+                <input type="hidden" name="aComment" value={{$all['aComment']}}>
                 <button type="submit">登録する</button>
             </form>
         </div>
