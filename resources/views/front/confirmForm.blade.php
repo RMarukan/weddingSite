@@ -49,38 +49,52 @@
                 <tr>
                     <td>
                         <div class="form-group">
-                            <label for="attend1" class="col-sm-3 control-label">{{$type->attendType}}へのご参加</label>
+                            <label for="attendFlg" class="col-sm-3 control-label">{{$type->attendType}}へのご参加</label>
                         </div>
                     </td>
                     <td>
                         <div>
-                            @switch($all['attend1'])
-                            @case()
-                            {{ $all['attend1']  }}
+                            @if($all['attendFlg']==1)
+                                ご出席
+                            @else
+                                ご欠席
+                            @endif
                         </div>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <div class="form-group">
-                            <label for="dComment" class="col-sm-3 control-label">お料理に対するご要望等</label>
+                            <label for="guestComment" class="col-sm-3 control-label">メッセージ</label>
                         </div>
                     </td>
                     <td>
                         <div>
-                            {{ $all['dComment']  }}
+                            {{ $all['guestComment']  }}
                         </div>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <div class="form-group">
-                            <label for="dComment" class="col-sm-3 control-label">その他ご要望等</label>
+                            <label for="dinnerComment" class="col-sm-3 control-label">お料理に対するご要望等</label>
                         </div>
                     </td>
                     <td>
                         <div>
-                            {{ $all['aComment']  }}
+                            {{ $all['dinnerComment']  }}
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="anotherComment" class="col-sm-3 control-label">その他ご要望等</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            {{ $all['anotherComment']  }}
                         </div>
                     </td>
                 </tr>
@@ -94,22 +108,26 @@
                 <input type="hidden" name="fstNameK" value={{$all['fstNameK']}}>
                 <input type="hidden" name="lstNameF" value={{$all['lstNameF']}}>
                 <input type="hidden" name="fstNameF" value={{$all['fstNameF']}}>
-                <input type="hidden" name="age" value={{$all['age']}}>
-                <input type="hidden" name="attend1" value={{$all['attend1']}}>
-                <input type="hidden" name="dComment" value={{$all['dComment']}}>
-                <input type="hidden" name="aComment" value={{$all['aComment']}}>
+                <input type="hidden" name="ageFlg" value={{$all['ageFlg']}}>
+                <input type="hidden" name="attendFlg" value={{$all['attendFlg']}}>
+                <input type="hidden" name="guestComment" value={{$all['guestComment']}}>
+                <input type="hidden" name="dinnerComment" value={{$all['dinnerComment']}}>
+                <input type="hidden" name="anotherComment" value={{$all['anotherComment']}}>
                 <button type="submit">修正する</button>
             </form>
-            <form  action="{{ url('/inputForm')}}" method="post">
+            <form  action="{{ url('/completeForm')}}" method="post">
                 {{ csrf_field() }}
                 <input type="hidden" name="lstNameK" value={{$all['lstNameK']}}>
                 <input type="hidden" name="fstNameK" value={{$all['fstNameK']}}>
                 <input type="hidden" name="lstNameF" value={{$all['lstNameF']}}>
                 <input type="hidden" name="fstNameF" value={{$all['fstNameF']}}>
-                <input type="hidden" name="age" value={{$all['age']}}>
-                <input type="hidden" name="attend1" value={{$all['attend1']}}>
-                <input type="hidden" name="dComment" value={{$all['dComment']}}>
-                <input type="hidden" name="aComment" value={{$all['aComment']}}>
+                <input type="hidden" name="attributeId" value={{$type->attributeId}}>
+                <input type="hidden" name="ageFlg" value={{$all['ageFlg']}}>
+                <input type="hidden" name="attendType" value={{$type->attendType}}>
+                <input type="hidden" name="attendFlg" value={{$all['attendFlg']}}>
+                <input type="hidden" name="guestComment" value={{$all['guestComment']}}>
+                <input type="hidden" name="dinnerComment" value={{$all['dinnerComment']}}>
+                <input type="hidden" name="anotherComment" value={{$all['anotherComment']}}>
                 <button type="submit">登録する</button>
             </form>
         </div>

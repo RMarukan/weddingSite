@@ -44,7 +44,7 @@
                     </td>
                     <td>
                         <div class="col-sm-6">
-                            <select name="age">
+                            <select name="ageFlg">
                                 <option>選択してください</option>
                                 @foreach($ageCode as $code)
                                     <option value={{$code->ageId}}>{{$code->type}} </option>
@@ -56,14 +56,14 @@
                 <tr>
                     <td>
                         <div class="form-group">
-                            <label for="attend1" class="col-sm-3 control-label">{{$type->attendType}}へのご参加</label>
+                            <label for="attendFlg" class="col-sm-3 control-label">{{$type->attendType}}へのご参加</label>
                         </div>
                     </td>
                     <td>
                         <div>
-                            <input type="radio" name="attend1" id="r1" value="yes" checked>
+                            <input type="radio" name="attendFlg" id="r1" value="1" checked>
                             <lavel accesskey="Y" for="r1">ご出席</lavel>
-                            <input type="radio" name="attend1" id="r2" value="no">
+                            <input type="radio" name="attendFlg" id="r2" value="2">
                             <lavel accesskey="N" for="r2">ご欠席</lavel>
                         </div>
                     </td>
@@ -71,24 +71,36 @@
                 <tr>
                     <td>
                         <div class="form-group">
-                            <label for="dComment" class="col-sm-3 control-label">お料理に対するご要望等</label>
+                            <label for="guestComment" class="col-sm-3 control-label">メッセージ</label>
                         </div>
                     </td>
                     <td>
                         <div>
-                            <textarea name="dComment" cols=60 rows=8 placeholder="アレルギー等料理へのご要望がありましたら入力をお願いいたします。"></textarea>
+                            <textarea name="guestComment" cols=60 rows=8 placeholder=""></textarea>
                         </div>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <div class="form-group">
-                            <label for="dComment" class="col-sm-3 control-label">その他ご要望等</label>
+                            <label for="dinnerComment" class="col-sm-3 control-label">お料理に対するご要望等</label>
                         </div>
                     </td>
                     <td>
                         <div>
-                            <textarea name="aComment" cols=60 rows=8 placeholder="車椅子のご利用等要望がございましたらご入力をお願いいたします。"></textarea>
+                            <textarea name="dinnerComment" cols=60 rows=8 placeholder="アレルギー等料理へのご要望がありましたら入力をお願いいたします。"></textarea>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="anotherComment" class="col-sm-3 control-label">その他ご要望等</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <textarea name="anotherComment" cols=60 rows=8 placeholder="車椅子のご利用等要望がございましたらご入力をお願いいたします。"></textarea>
                         </div>
                     </td>
                 </tr>

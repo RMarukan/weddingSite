@@ -32,11 +32,25 @@ class ConfirmFormController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,$id)
+    public function store(\Illuminate\Http\Request $request)
     {
 
-        $all = Request::all();
-        Guest::create($all);
+        $all = new Guest();
+
+        $all->lstNameK = $request->input('lstNameK');
+        $all->fstNameK = $request->input('fstNameK');
+        $all->lstNameF = $request->input('lstNameF');
+        $all->fstNameF = $request->input('fstNameF');
+        $all->attributeId = $request->input('attributeId');
+        $all->ageFlg = $request->input('ageFlg');
+        $all->attendType = $request->input('attendType');
+        $all->attendFlg = $request->input('attendFlg');
+        $all->guestComment = $request->input('guestComment');
+        $all->dinnerComment = $request->input('dinnerComment');
+        $all->anotherComment = $request->input('anotherComment');
+
+        $all->save();
+        //Guest::create($all);
 
         return view('front.completeForm');
     }

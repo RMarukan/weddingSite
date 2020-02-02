@@ -34,7 +34,7 @@ class InputFormController extends Controller
         $all = Request::all();
 
         $type = Attribute::where('attributeId',$id)->first();
-        $ageName = Age_Code::where('ageId',$all['age'])->first();
+        $ageName = Age_Code::where('ageId',$all['ageFlg'])->first();
 
         return view('front.confirmForm',['all' => $all],compact('type','ageName'));
     }
