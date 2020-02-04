@@ -11,7 +11,8 @@
 
     <!-- Massage Area -->
     <div  style="text-align: center">
-    <h2>ご出欠をご記入ください</h2>
+        <h2>ご出欠をご記入ください</h2>
+        <p><font color="red">*</font>の箇所は入力必須項目です。</p>
     </div>
 
     <!-- Input From -->
@@ -20,7 +21,7 @@
         <div class="container" style="text-align: center">
             <section class="mt-4">
                 <div class="row">
-                    <p class="col-3">お名前<br class="d-lg-none">（漢字）</p>
+                    <p class="col-3"><font color="red">*</font>お名前<br class="d-lg-none">（漢字）</p>
                     <p class="col-4 ta-l">
                         <input type="text" name="lstNameK" id="lstNameK" maxlength=10 size="15;" placeholder="姓" required>
                     </p>
@@ -29,7 +30,7 @@
                     </p>
                 </div>
                 <div class="row">
-                    <p class="col-3">お名前<br class="d-lg-none">（かな）</p>
+                    <p class="col-3"><font color="red">*</font>お名前<br class="d-lg-none">（かな）</p>
                     <p class="col-4 ta-l">
                         <input type="text" name="lstNameF" id="lstNameF" maxlength=15  size="15;" placeholder="せい" required>
                     </p>
@@ -38,10 +39,10 @@
                     </p>
                 </div>
                 <div class="row">
-                    <p class="col-3">年代</p>
+                    <p class="col-3"><font color="red">*</font>年代</p>
                     <p class="col-9 ta-l">
-                        <select name="ageFlg">
-                            <option>選択してください</option>
+                        <select name="ageFlg" required>
+                            <option label="選択してください"></option>
                             @foreach($ageCode as $code)
                                 <option value={{$code->ageId}}>{{$code->type}} </option>
                             @endforeach
@@ -49,7 +50,7 @@
                     </p>
                  </div>
                 <div class="row">
-                    <p class="col-3">{{$type->attendType}}へのご参加</p>
+                    <p class="col-3"><font color="red">*</font>{{$type->attendType}}へのご参加</p>
                     <p class="col-4 ta-l">
                         <input type="radio" name="attendFlg" id="r1" value="1" checked>
                         <label accesskey="Y" for="r1">ご出席</label>
@@ -60,7 +61,7 @@
                     </p>
                 </div>
                 <div class="row">
-                    <p class="col-3">メッセージ</p>
+                    <p class="col-3"><font color="red">*</font>メッセージ</p>
                     <p class="col-9 ta-l">
                         <textarea name="guestComment" cols="35" rows="6" placeholder="" required></textarea>
                     </p>
