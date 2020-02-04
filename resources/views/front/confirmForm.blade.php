@@ -2,105 +2,59 @@
 
 @section('content')
     <title>入力内容確認</title>
+
+    <style>
+        .ta-l {
+            text-align: left;
+        }
+    </style>
+
     <!-- Massage Area -->
-    <h1>ご入力内容をご確認ください</h1>
+    <div  style="text-align: center">
+    <h2>ご入力内容をご確認ください</h2>
+    </div>
 
     <!-- Input From -->
-        <table class="table table-striped task-table">
-            <tbody>
-                <tr>
-                    <td>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">お名前（漢字）</label>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="col-sm-6">
-                            姓：{{ $all['lstNameK'] }}　
-                            名：{{ $all['fstNameK'] }}
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">お名前（かな）</label>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="col-sm-6">
-                            せい：{{ $all['lstNameF']  }}　
-                            めい：{{ $all['fstNameF']  }}
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">年代</label>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="col-sm-6">
-                            {{ $ageName->type }}
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="form-group">
-                            <label for="attendFlg" class="col-sm-3 control-label">{{$type->attendType}}へのご参加</label>
-                        </div>
-                    </td>
-                    <td>
-                        <div>
-                            @if($all['attendFlg']==1)
-                                ご出席
-                            @else
-                                ご欠席
-                            @endif
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="form-group">
-                            <label for="guestComment" class="col-sm-3 control-label">メッセージ</label>
-                        </div>
-                    </td>
-                    <td>
-                        <div>
-                            {{ $all['guestComment']  }}
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="form-group">
-                            <label for="dinnerComment" class="col-sm-3 control-label">お料理に対するご要望等</label>
-                        </div>
-                    </td>
-                    <td>
-                        <div>
-                            {{ $all['dinnerComment']  }}
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="form-group">
-                            <label for="anotherComment" class="col-sm-3 control-label">その他ご要望等</label>
-                        </div>
-                    </td>
-                    <td>
-                        <div>
-                            {{ $all['anotherComment']  }}
-                        </div>
-                    </td>
-                </tr>
+    <div class="container" style="text-align: center">
+        <section class="mt-4">
+            <div class="row">
+                <p class="col-3">お名前<br class="d-lg-none">（漢字）</p>
+                <p class="col-4 ta-l">姓　：{{ $all['lstNameK'] }}</p>
+                <p class="col-4 ta-l">名　：{{ $all['fstNameK'] }}</p>
+            </div>
+            <div class="row">
+                <p class="col-3">お名前<br class="d-lg-none">（かな）</p>
+                <p class="col-4 ta-l">せい：{{ $all['lstNameF']  }}</p>
+                <p class="col-4 ta-l">めい：{{ $all['fstNameF']  }}</p>
+            </div>
+            <div class="row">
+                <p class="col-3">年代</p>
+                <p class="col-9 ta-l">{{ $ageName->type }}</p>
+            </div>
+            <div class="row">
+                <p class="col-3">{{$type->attendType}}へのご参加</p>
+                <p class="col-9 ta-l">
+                    @if($all['attendFlg']==1)
+                        ご出席
+                    @else
+                        ご欠席
+                    @endif
+                </p>
+            </div>
+            <div class="row">
+                <p class="col-3">メッセージ</p>
+                <p class="col-9 ta-l">{{ $all['guestComment'] }}</p>
+            </div>
+            <div class="row">
+                <p class="col-3">お料理に対するご要望</p>
+                <p class="col-9 ta-l"> {{ $all['dinnerComment'] }}</p>
+            </div>
+            <div class="row">
+                <p class="col-3">その他ご要望</p>
+                <p class="col-9 ta-l"> {{ $all['anotherComment'] }}</p>
+            </div>
 
-            </tbody>
-        </table>
+        </section>
         <div>
             <form  action="{{ url('/inputForm'). "/" . $type->attributeId}}" method="post">
                 {{ csrf_field() }}
@@ -131,4 +85,5 @@
                 <button type="submit">登録する</button>
             </form>
         </div>
+    </div>
 @endsection
