@@ -14,7 +14,6 @@ class AddGuestComent extends Migration
     public function up()
     {
         Schema::table('guest', function (Blueprint $table) {
-            $table->dropColumn(['guestComment']);
             $table->dropColumn(['attendType']);
         });
 
