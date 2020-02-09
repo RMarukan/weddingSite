@@ -4,8 +4,8 @@
     <title>Welcome To Our Wedding Party</title>
     <!-- Massage Area -->
     <div class="container" style="text-align: center">
-        <h2>INVITATION</h2>
-        <div>
+        <div class="bg-ground">
+            <h2>INVITATION</h2>
             丸山 直樹・丸山 莉穂（旧姓：神田）です。<br>
             <br>
             皆様、お変わりなくお過ごしでしょうか？<br>
@@ -25,7 +25,7 @@
         </div>
         <hr>
         <div>
-            <section class="mt-4">
+            <section class="mt-4 bg-ground">
                 <h3>HOST</h3>
                 <div class="row">
                     <p class="offset-3 col-3 ta-l">新郎</p>
@@ -38,7 +38,7 @@
                 </div>
             </section>
 
-            <section class="mt-4">
+            <section class="mt-4 bg-ground">
                 <h3>INFORMATION</h3>
                 <div class="row">
                     <p class="offset-3 col-3 ta-l">開催種別</p>
@@ -68,7 +68,7 @@
                 @endif
             </section>
 
-            <section class="mt-4">
+            <section class="mt-4 bg-ground">
                 <h3>ACCESS</h3>
                 <div class="row text-wrap">
                     <p class="offset-3 col-3 ta-l">会場名</p>
@@ -89,16 +89,10 @@
     </div>
 
     <!-- Input From -->
-    <section class="mt-4">
-        <div align="center">
+    <div class="container">
+        <div class=" mt-2 bg-ground" align="center">
             <input type="hidden" name="attributeId" value=>
             <a href="../../inputForm/{{$attribute->attributeId}}">回答を入力する</a>
         </div>
-    </section>
-
-    <style>
-        .ta-l {
-            text-align: left;
-        }
-    </style>
+    </div>
 @endsection

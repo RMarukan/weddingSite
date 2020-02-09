@@ -3,24 +3,19 @@
 @section('content')
     <title>入力フォーム</title>
 
-
-    <style>
-        .ta-l {
-            text-align: left;
-        }
-    </style>
-
     <!-- Massage Area -->
-    <div  style="text-align: center">
-        <h2>ご出欠をご記入ください</h2>
-        <p><font color="red">*</font>の箇所は入力必須項目です。</p>
+    <div class="container" style="text-align: center">
+        <div class="bg-ground">
+            <h2>ご出欠をご記入ください</h2>
+            <p><font color="red">*</font>の箇所は入力必須項目です。</p>
+        </div>
     </div>
 
     <!-- Input From -->
     <form  action="{{ url('confirmForm') . "/" . $type->attributeId}}" method="post">
         {{ csrf_field() }}
         <div class="container" style="text-align: center">
-            <section class="mt-4">
+            <section class="mt-4  bg-ground">
                 <div class="row">
                     <p class="col-3"><font color="red">*</font>お名前<br class="d-lg-none">（漢字）</p>
                     <p class="col-4 ta-l">
@@ -89,7 +84,7 @@
                     </p>
                 </div>
                 <div class="row">
-                    <p class="col-3">その他ご要望</p>
+                    <p class="col-3">その他<br class="d-lg-none">ご要望</p>
                     <p class="col-9 ta-l">
                         <textarea name="anotherComment" cols="35" rows="6" placeholder="車椅子のご利用等要望がございましたらご入力をお願いいたします。">{{ $all['anotherComment'] }}</textarea>
                     </p>
@@ -97,8 +92,8 @@
 
             </section>
 
-            <div>
-                <button type="submit" class="btn btn-primary btn-lg">入力内容を確認する</button>
+            <div class="mt-2 bg-ground">
+                <button type="submit" class="btn btn-link">入力内容を確認する</button>
             </div>
         </div>
     </form>

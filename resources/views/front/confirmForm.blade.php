@@ -3,20 +3,16 @@
 @section('content')
     <title>入力内容確認</title>
 
-    <style>
-        .ta-l {
-            text-align: left;
-        }
-    </style>
-
     <!-- Massage Area -->
-    <div  style="text-align: center">
-    <h2>ご入力内容をご確認ください</h2>
+    <div class="container" style="text-align: center">
+        <div class="bg-ground">
+            <h2>ご入力内容をご確認ください</h2>
+        </div>
     </div>
 
     <!-- Input From -->
     <div class="container" style="text-align: center">
-        <section class="mt-4">
+        <section class="mt-4 bg-ground">
             <div class="row">
                 <p class="col-3">お名前<br class="d-lg-none">（漢字）</p>
                 <p class="col-4 ta-l">姓　：{{ $all['lstNameK'] }}</p>
@@ -55,6 +51,8 @@
             </div>
 
         </section>
+    </div>
+    <div class="mt-4 container"  style="text-align: center">
         <div>
             <form  action="{{ url('/inputForm'). "/" . $type->attributeId}}" method="post">
                 {{ csrf_field() }}
@@ -67,8 +65,10 @@
                 <input type="hidden" name="guestComment" value={{$all['guestComment']}}>
                 <input type="hidden" name="dinnerComment" value={{$all['dinnerComment']}}>
                 <input type="hidden" name="anotherComment" value={{$all['anotherComment']}}>
-                <button type="submit">修正する</button>
+                <button type="submit"  class="mt-2 btn btn-light">修正する</button>
             </form>
+        </div>
+        <div>
             <form  action="{{ url('/completeForm')}}" method="post">
                 {{ csrf_field() }}
                 <input type="hidden" name="lstNameK" value={{$all['lstNameK']}}>
@@ -82,7 +82,7 @@
                 <input type="hidden" name="guestComment" value={{$all['guestComment']}}>
                 <input type="hidden" name="dinnerComment" value={{$all['dinnerComment']}}>
                 <input type="hidden" name="anotherComment" value={{$all['anotherComment']}}>
-                <button type="submit">登録する</button>
+                <button type="submit" class="mt-2 btn btn-light">登録する</button>
             </form>
         </div>
     </div>
