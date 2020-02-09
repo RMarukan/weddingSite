@@ -19,24 +19,24 @@
                 <div class="row">
                     <p class="col-3 col-sm-3"><font color="red">*</font>お名前<br class="d-lg-none">（漢字）</p>
                     <p class="col-4 col-sm-4 ta-l">
-                        <input type="text" name="lstNameK" id="lstNameK" maxlength=10 size="12;" placeholder="姓" value="{{ $all['lstNameK'] }}" required>
+                        <input type="text" name="lstNameK" id="lstNameK" maxlength=10  placeholder="姓" value="{{ $all['lstNameK'] }}" required class="w-100">
                     </p>
                     <p class="col-4 col-sm-4 ta-l">
-                        <input type="text" name="fstNameK" id="fstNameK" maxlength=10 size="12;" placeholder="名"value="{{ $all['fstNameK'] }}" required>
+                        <input type="text" name="fstNameK" id="fstNameK" maxlength=10  placeholder="名"value="{{ $all['fstNameK'] }}" required class="w-100">
                     </p>
                 </div>
                 <div class="row">
                     <p class="col-3 col-sm-3"><font color="red">*</font>お名前<br class="d-lg-none">（かな）</p>
                     <p class="col-4 col-sm-4 ta-l">
-                        <input type="text" name="lstNameF" id="lstNameF" maxlength=15  size="12;" placeholder="せい" value="{{ $all['lstNameF'] }}" required>
+                        <input type="text" name="lstNameF" id="lstNameF" maxlength=15   placeholder="せい" value="{{ $all['lstNameF'] }}" required class="w-100">
                     </p>
                     <p class="col-4 col-sm-4 ta-l">
-                        <input type="text" name="fstNameF" id="fstNameF" maxlength=15  size="12;" placeholder="めい" value="{{ $all['fstNameF'] }}" required>
+                        <input type="text" name="fstNameF" id="fstNameF" maxlength=15   placeholder="めい" value="{{ $all['fstNameF'] }}" required class="w-100">
                     </p>
                 </div>
                 <div class="row">
                     <p class="col-3 col-sm-3"><font color="red">*</font>年代</p>
-                    <p class="col-9 col-sm-9 ta-l">
+                    <p class="col-8 col-sm-8 ta-l">
                         <select name="ageFlg" required>
                             <option label="選択してください"></option>
                             @foreach($ageCode as $code)
@@ -73,20 +73,20 @@
                 </div>
                 <div class="row">
                     <p class="col-3 col-sm-3"><font color="red">*</font>メッセージ</p>
-                    <p class="col-9 col-sm-9 ta-l">
-                        <textarea name="guestComment" cols="30" rows="6" placeholder="" required>{{ $all['guestComment'] }}</textarea>
+                    <p class="col-8 col-sm-8 ta-l">
+                        <textarea name="guestComment"  rows="6" placeholder="" required class="w-100">{{ $all['guestComment'] }}</textarea>
                     </p>
                 </div>
                 <div class="row">
                     <p class="col-3 col-sm-3">お料理に対するご要望</p>
-                    <p class="col-9 col-sm-9 ta-l">
-                        <textarea name="dinnerComment" cols="30" rows="6" placeholder="アレルギー等料理へのご要望がありましたら入力をお願いいたします。">{{ $all['dinnerComment'] }}</textarea>
+                    <p class="col-8 col-sm-8 ta-l">
+                        <textarea name="dinnerComment"  rows="6" placeholder="アレルギー等料理へのご要望がありましたら入力をお願いいたします。" class="w-100">{{ $all['dinnerComment'] }}</textarea>
                     </p>
                 </div>
                 <div class="row">
                     <p class="col-3 col-sm-3">その他<br class="d-lg-none">ご要望</p>
-                    <p class="col-9 col-sm-9 ta-l">
-                        <textarea name="anotherComment" cols="30" rows="6" placeholder="車椅子のご利用等要望がございましたらご入力をお願いいたします。">{{ $all['anotherComment'] }}</textarea>
+                    <p class="col-8 col-sm-8 ta-l">
+                        <textarea name="anotherComment"  rows="6" placeholder="車椅子のご利用等要望がございましたらご入力をお願いいたします。" class="w-100">{{ $all['anotherComment'] }}</textarea>
                     </p>
                 </div>
 
