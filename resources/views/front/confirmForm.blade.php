@@ -14,22 +14,22 @@
     <div class="container" style="text-align: center">
         <section class="mt-4 bg-ground">
             <div class="row">
-                <p class="col-3">お名前<br class="d-lg-none">（漢字）</p>
-                <p class="col-4 ta-l">姓　：{{ $all['lstNameK'] }}</p>
-                <p class="col-4 ta-l">名　：{{ $all['fstNameK'] }}</p>
+                <p class="col-3 col-sm-3">お名前<br class="d-lg-none">（漢字）</p>
+                <p class="col-4 col-sm-4 ta-l">{{ $all['lstNameK'] }}</p>
+                <p class="col-4 col-sm-4 ta-l">{{ $all['fstNameK'] }}</p>
             </div>
             <div class="row">
-                <p class="col-3">お名前<br class="d-lg-none">（かな）</p>
-                <p class="col-4 ta-l">せい：{{ $all['lstNameF']  }}</p>
-                <p class="col-4 ta-l">めい：{{ $all['fstNameF']  }}</p>
+                <p class="col-3 col-sm-3">お名前<br class="d-lg-none">（かな）</p>
+                <p class="col-4 col-sm-4 ta-l">{{ $all['lstNameF']  }}</p>
+                <p class="col-4 col-sm-4 ta-l">{{ $all['fstNameF']  }}</p>
             </div>
             <div class="row">
-                <p class="col-3">年代</p>
-                <p class="col-9 ta-l">{{ $ageName->type }}</p>
+                <p class="col-3 col-sm-3">年代</p>
+                <p class="col-9 col-sm-9 ta-l">{{ $ageName->type }}</p>
             </div>
             <div class="row">
-                <p class="col-3">{{$type->attendType}}へのご参加</p>
-                <p class="col-9 ta-l">
+                <p class="col-3 col-sm-3">{{$type->attendType}}へのご参加</p>
+                <p class="col-9 col-sm-9 ta-l">
                     @if($all['attendFlg']==1)
                         ご出席
                     @else
@@ -38,16 +38,16 @@
                 </p>
             </div>
             <div class="row">
-                <p class="col-3">メッセージ</p>
-                <p class="col-9 ta-l">{{ $all['guestComment'] }}</p>
+                <p class="col-3 col-sm-3">メッセージ</p>
+                <p class="col-9 col-sm-9 ta-l">{{ $all['guestComment'] }}</p>
             </div>
             <div class="row">
-                <p class="col-3">お料理に対するご要望</p>
-                <p class="col-9 ta-l"> {{ $all['dinnerComment'] }}</p>
+                <p class="col-3 col-sm-3">お料理に対するご要望</p>
+                <p class="col-9 col-sm-9 ta-l"> {{ $all['dinnerComment'] }}</p>
             </div>
             <div class="row">
-                <p class="col-3">その他ご要望</p>
-                <p class="col-9 ta-l"> {{ $all['anotherComment'] }}</p>
+                <p class="col-3 col-sm-3">その他<br class="d-lg-none">ご要望</p>
+                <p class="col-9 col-sm-9 ta-l"> {{ $all['anotherComment'] }}</p>
             </div>
 
         </section>

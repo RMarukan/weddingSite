@@ -23,7 +23,7 @@
             出欠のお知らせは、<br>
             以下のリンクより入力をお願いいたします。
         </div>
-        <hr>
+
         <div>
             <section class="mt-4 bg-ground">
                 <h3>HOST</h3>
