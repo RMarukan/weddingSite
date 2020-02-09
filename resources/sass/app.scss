@@ -32,3 +32,47 @@ h5,
 h6 {
   font-family: 'Dancing Script', serif;
 }
+
+.btn-circle-stitch {
+  display: inline-block;
+  text-decoration: none;
+  background: #8cd460;
+  color: #FFF;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0px 0px 0px 5px #8cd460;
+  border: dashed 2px #FFF;
+  transition: .4s;
+}
+
+.btn-circle-stitch:hover {
+  background: #518034;
+  border: dashed 2.5px #FFF;
+  box-shadow: 0px 0px 0px 5px #518034;
+}
+
+.btn-circle-stitch2 {
+  display: inline-block;
+  text-decoration: none;
+  background: #fdb035;
+  color: #FFF;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0px 0px 0px 5px #fdb035;
+  border: dashed 2px #FFF;
+  transition: .4s;
+}
+
+.btn-circle-stitch2:hover {
+  background: #c78a2a;
+  border: dashed 2.5px #FFF;
+  box-shadow: 0px 0px 0px 5px #c78a2a;
+}

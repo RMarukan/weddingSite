@@ -76,8 +76,8 @@
                 </div>
             </section>
 
-            <div class="mt-2 bg-ground">
-                <button type="submit" class="btn btn-link">入力内容を確認する</button>
+            <div class="mt-3">
+                <button type="submit" class="btn-circle-stitch">入力内容を確認</button>
             </div>
         </div>
     </form>

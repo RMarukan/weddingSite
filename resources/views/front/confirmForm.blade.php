@@ -52,9 +52,9 @@
 
         </section>
     </div>
-    <div class="mt-4 container"  style="text-align: center">
-        <div>
-            <form  action="{{ url('/inputForm'). "/" . $type->attributeId}}" method="post">
+    <div class="mt-4 container" style="text-align: center">
+        <div class="row">
+            <form  class="col-6 col-sm-6" action="{{ url('/inputForm'). "/" . $type->attributeId}}" method="post">
                 {{ csrf_field() }}
                 <input type="hidden" name="lstNameK" value={{$all['lstNameK']}}>
                 <input type="hidden" name="fstNameK" value={{$all['fstNameK']}}>
@@ -65,11 +65,9 @@
                 <input type="hidden" name="guestComment" value={{$all['guestComment']}}>
                 <input type="hidden" name="dinnerComment" value={{$all['dinnerComment']}}>
                 <input type="hidden" name="anotherComment" value={{$all['anotherComment']}}>
-                <button type="submit"  class="mt-2 btn btn-light">修正する</button>
+                <button type="submit" class="btn-circle-stitch">修正する</button>
             </form>
-        </div>
-        <div>
-            <form  action="{{ url('/completeForm')}}" method="post">
+            <form class="col-6 col-sm-6" action="{{ url('/completeForm')}}" method="post">
                 {{ csrf_field() }}
                 <input type="hidden" name="lstNameK" value={{$all['lstNameK']}}>
                 <input type="hidden" name="fstNameK" value={{$all['fstNameK']}}>
@@ -82,7 +80,7 @@
                 <input type="hidden" name="guestComment" value={{$all['guestComment']}}>
                 <input type="hidden" name="dinnerComment" value={{$all['dinnerComment']}}>
                 <input type="hidden" name="anotherComment" value={{$all['anotherComment']}}>
-                <button type="submit" class="mt-2 btn btn-light">登録する</button>
+                <button type="submit" class="btn-circle-stitch2">登録する</button>
             </form>
         </div>
     </div>
