@@ -50,15 +50,15 @@
                 </div>
                 <div class="row">
                     <p class="offset-3 col-3 ta-l">受付時間</p>
-                    <p>{{ $attribute->reception }}</p>
+                    <p>{{ substr($attribute->reception,0,5) }}</p>
                 </div>
                 <div class="row">
                     <p class="offset-3 col-3 ta-l">開宴時間</p>
-                    <p>{{ $attribute->start }}</p>
+                    <p>{{ substr($attribute->start,0,5) }}</p>
                 </div>
                 <div class="row">
-                    <p class="offset-3 col-3 ta-l">終宴時間</p>
-                    <p>{{ $attribute->end }}</p>
+                    <p class="offset-3 col-3 ta-l">お開き</p>
+                    <p>{{ substr($attribute->end,0,5) }}</p>
                 </div>
                 @if($attribute->attributeId==3)
                     <div class="row">
